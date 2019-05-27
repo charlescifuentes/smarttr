@@ -10,10 +10,10 @@
             </div>
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading">Menú</span>
-          <ul class="list-unstyled">
-            <li class="active"><a href="<?php echo base_url('chome');?>"> <i class="icon-home"></i>Inicio </a></li>
-            <li><a href="<?php echo base_url('cclientes');?>"> <i class="icon-grid"></i>Clientes </a></li>
-            <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Servicio Técnico </a></li>
+          <ul class="navbar-nav">
+            <li <?php if($this->uri->segment(1)=="chome"){echo 'class="active"';}?>><a href="<?php echo base_url('chome');?>"> <i class="icon-home"></i>Inicio </a></li>
+            <li <?php if($this->uri->segment(1)=="ccustomers"){echo 'class="active"';}?>><a href="<?php echo base_url('ccustomers');?>"> <i class="icon-grid"></i>Clientes </a></li>
+            <li <?php if($this->uri->segment(1)=="ctechnicals"){echo 'class="active"';}?>><a href="<?php echo base_url('ctechnicals');?>"> <i class="fa fa-bar-chart"></i>Servicio Técnico </a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Reportes </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="#">Servicio Ténico</a></li>
