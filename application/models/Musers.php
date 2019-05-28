@@ -15,5 +15,12 @@ class Musers extends CI_model{
         else {
             return false;
         }
-    } 
+    }
+
+    public function getCustomers()
+    {
+        $this->db->get('customers');
+        $query = $this->db;
+    
+    }
 }

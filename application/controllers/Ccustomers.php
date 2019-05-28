@@ -10,7 +10,9 @@ class Ccustomers extends CI_Controller {
 	}
 
 	public function index()
-	{	
+	{
+		$res = $this->musers->getCustomers();
+		
 		$this->load->view('layout/header');
 		$this->load->view('layout/sidebar');
 		$this->load->view('customers/list');

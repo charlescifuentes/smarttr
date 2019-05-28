@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Cauth extends CI_Controller {
 
 	public function __construct()
-    {
+  {
 		parent::__construct();
-        $this->load->model('musers');
+  	$this->load->model('musers');
 	}
 	
 	public function index()
@@ -17,7 +17,6 @@ class Cauth extends CI_Controller {
 		else {
 			$this->load->view('auth/login');
 		}
-		
 	}
 
 	public function login()
