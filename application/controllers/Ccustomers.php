@@ -6,16 +6,16 @@ class Ccustomers extends CI_Controller {
 	public function __construct()
   	{
 		parent::__construct();
-  		$this->load->model('musers');
+  		$this->load->model('mcustomers');
 	}
 
 	public function index()
 	{
-		$res = $this->musers->getCustomers();
+		$data = array('customers' => $this->mcustomers->get_customers());
 		
 		$this->load->view('layout/header');
 		$this->load->view('layout/sidebar');
-		$this->load->view('customers/list');
+		$this->load->view('customers/list',$data);
 		$this->load->view('layout/footer');
 	}
 }

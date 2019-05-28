@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2019 a las 17:58:53
+-- Tiempo de generación: 28-05-2019 a las 21:13:45
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.12
 
@@ -39,6 +39,13 @@ CREATE TABLE `customers` (
   `customer_city` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `customer_status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `customers`
+--
+
+INSERT INTO `customers` (`customer_id`, `customer_nit`, `customer_firstname`, `customer_lastname`, `customer_address`, `customer_phone`, `customer_email`, `customer_city`, `customer_status`) VALUES
+(1, 80793699, 'Charles Darwin', 'Cifuentes Arango', 'Calle 26a # 4-28', '3174015113', 'charlescifuentes@gmail.com', 'Tuluá', 1);
 
 -- --------------------------------------------------------
 
@@ -143,7 +150,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
