@@ -19,7 +19,7 @@
                   <div class="card">
                     <div class="card-header d-flex align-items-center">
                       <h3 class="h4">Listado de Clientes</h3>
-                      <a class="btn btn-primary ml-auto" href="<?php echo base_url('customers/add'); ?>" role="button">Agregar</a>
+                      <a class="btn btn-primary ml-auto" href="<?php echo base_url('ccustomers/add'); ?>" role="button">Agregar</a>
                     </div>
                     <div class="card-body">
                       <div class="table-responsive">
