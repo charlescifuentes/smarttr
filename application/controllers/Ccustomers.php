@@ -35,7 +35,43 @@ class Ccustomers extends CI_Controller {
 		}
 		else {
 			$this->session->set_flashdata("error","No se pudo guardar la información");
-			redirect('ccustomers/add');
+			redirect(base_url('ccustomers/add'));
 		}
+	}
+
+	public function edit($id) 
+	{
+		$data = array('customer' => $this->mcustomers->get_customer($id));
+		$this->load->view('layout/header');
+		$this->load->view('layout/sidebar');
+		$this->load->view('customers/edit',$data);
+		$this->load->view('layout/footer');
+	}
+
+	public function update()
+	{
+		if($this->mcustomers->update()) {
+			redirect(base_url('ccustomers'));
+		}
+		else {
+			$this->session->set_flashdata("error","No se pudo actualizar la información");
+			redirect(base_url('ccustomers/edit'));
+		}
+	}
+
+	public function view()
+	{
+		$id = $this->input->post('id');
+		$data = array('customer' => $this->mcustomers->get_customer($id));
+		
+        echo json_encode($data);
+	}
+
+	public function delete()
+	{
+		$id = $this->input->post('id');
+		$data = array('customer' => $this->mcustomers->delete($id));
+		
+        echo json_encode($data);
 	}
 }

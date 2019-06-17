@@ -22,8 +22,9 @@
                       <a class="btn btn-primary ml-auto" href="<?php echo base_url('ccustomers/add'); ?>" role="button">Agregar</a>
                     </div>
                     <div class="card-body">
+                      <input type="hidden" id="base" value="<?php echo base_url(); ?>">
                       <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="table-list">
                           <thead>
                             <tr>
                               <th>#</th>
@@ -40,7 +41,7 @@
                             <?php if (!empty($customers)) { ?>
                               <?php foreach ($customers as $customer) { ?>
                                 <tr>
-                                  <th scope="row"><?php echo $customer->customer_id; ?></th>
+                                  <td><?php echo $customer->customer_id; ?></td>
                                   <td><?php echo $customer->customer_nit; ?></td>
                                   <td><?php echo $customer->customer_firstname; ?></td>
                                   <td><?php echo $customer->customer_lastname; ?></td>
@@ -49,9 +50,9 @@
                                   <td><?php echo $customer->customer_city; ?></td>
                                   <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                      <button type="button" class="btn btn-info"><span class="fa fa-search"></span></button>
-                                      <a class="btn btn-warning" href="#" role="button"><span class="fa fa-pencil"></span></a>
-                                      <a class="btn btn-danger" href="#" role="button"><span class="fa fa-remove"></span></a>
+                                      <button type="button" class="btn btn-info btn-view" data-toggle="modal" data-target="#customerModal" value="<?php echo $customer->customer_id ?>"><span class="fa fa-search"></span></button>
+                                      <a class="btn btn-warning" href="<?php echo base_url('ccustomers/edit/'.$customer->customer_id.'') ?>" role="button"><span class="fa fa-pencil"></span></a>
+                                      <button type="button" class="btn btn-danger btn-delete" value="<?php echo $customer->customer_id ?>"><span class="fa fa-remove"></span></button>
                                     </div>
                                   </td>
                                 </tr>
@@ -66,3 +67,25 @@
               </div>
             </div>
           </section>
+
+          <!-- Modal View Customer -->
+          <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                  <h5 class="modal-title" id="exampleModalLabel">DETALLE CLIENTE</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <ul class="list-group">
+                  </ul>
+                  <table class="table" id="customer-table">
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>

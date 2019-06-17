@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-05-2019 a las 21:13:45
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.2.12
+-- Tiempo de generación: 17-06-2019 a las 21:39:38
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.1.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,7 +45,12 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_nit`, `customer_firstname`, `customer_lastname`, `customer_address`, `customer_phone`, `customer_email`, `customer_city`, `customer_status`) VALUES
-(1, 80793699, 'Charles Darwin', 'Cifuentes Arango', 'Calle 26a # 4-28', '3174015113', 'charlescifuentes@gmail.com', 'Tuluá', 1);
+(1, 80793699, 'Charles Darwin', 'Cifuentes Arangoooo', 'Calle 26a # 4-28', '3174015113', 'charlescifuentes@gmail.com', 'Tuluá', 1),
+(2, 1016000600, 'Leidy', 'Rendón', 'Carrera 23 # 43-32', '3103381276', 'leidyguevara@gmail.com', 'Cali', 1),
+(3, 25456, 'Carlos', 'Sanchez', 'Calle 34 # 23-43', '3254582', 'carlos@gmail.com', 'Bogotá', 1),
+(4, 98789776, 'Camilo', 'Sanchez', 'Calle 34 # 24-43', '3213332345', 'camilo@test.com', 'Cali', 1),
+(6, 12313, 'Carolina', 'Prieto', 'Carrera 23 # 98-98', '2131564', 'carolina@hotmail.com', 'Valledupar', 1),
+(7, 123123123, 'Juan', 'Pelaez', 'Calle busquela', '123123', 'asdasd', 'adasd', 0);
 
 -- --------------------------------------------------------
 
@@ -150,7 +155,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
