@@ -74,4 +74,12 @@ class Ccustomers extends CI_Controller {
 		
         echo json_encode($data);
 	}
+
+	public function check_nit() 
+	{
+		$nit = $this->input->post('nit');
+		$data = $this->mcustomers->check_nit($nit);
+		
+        echo json_encode($data);
+	}
 }

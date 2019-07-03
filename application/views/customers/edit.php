@@ -33,13 +33,16 @@
                       </div>
                       <?php } ?>
                       <form action="<?php echo base_url('ccustomers/update'); ?>" method="POST">
+                        <input type="hidden" id="base" value="<?php echo base_url(); ?>">
+                        <input type="hidden" id="customer_nit" value="<?php echo $customer->customer_nit ?>">
                         <div class="form-group">
                           <label class="form-control-label">ID</label>
                           <input type="text" class="form-control" id="id" name="id" value="<?php echo $customer->customer_id ?>" readonly>
                         </div>
                         <div class="form-group">
                           <label class="form-control-label">NIT</label>
-                          <input type="text" class="form-control" id="nit" name="nit" value="<?php echo $customer->customer_nit ?>">
+                          <input type="text" class="form-control" id="nit_edit" name="nit" value="<?php echo $customer->customer_nit ?>">
+                          <div class="alert alert-danger" role="alert" id="nit_duplicated"></div>
                         </div>
                         <div class="form-group">
                           <label class="form-control-label">Nombres</label>
@@ -78,7 +81,7 @@
                           </select>
                         </div>
                         <div class="form-group">       
-                          <input type="submit" value="Actualizar" class="btn btn-primary">
+                          <input type="submit" value="Actualizar" class="btn btn-primary" id="btn-enviar">
                         </div>
                       </form>
                     </div>

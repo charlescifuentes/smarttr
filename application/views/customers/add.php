@@ -33,9 +33,11 @@
                       </div>
                       <?php } ?>
                       <form action="<?php echo base_url('ccustomers/create'); ?>" method="POST">
+                        <input type="hidden" id="base" value="<?php echo base_url(); ?>">
                         <div class="form-group">
                           <label class="form-control-label">NIT</label>
-                          <input type="text" class="form-control" id="nit" name="nit">
+                          <input type="text" class="form-control" id="nit_add" name="nit">
+                          <div class="alert alert-danger" role="alert" id="nit_duplicated"></div>
                         </div>
                         <div class="form-group">
                           <label class="form-control-label">Nombres</label>
@@ -62,7 +64,7 @@
                           <input type="text" class="form-control" id="city" name="city">
                         </div>
                         <div class="form-group">       
-                          <input type="submit" value="Agregar" class="btn btn-primary">
+                          <input type="submit" value="Agregar" class="btn btn-primary" id="btn-enviar">
                         </div>
                       </form>
                     </div>

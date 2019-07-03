@@ -34,16 +34,58 @@ $(document).ready(function () {
 
     $('.btn-delete').on('click', function (e) {
         e.preventDefault();
-        
-        var id = $(this).val();
+        var r = confirm("Desea desactivar este cliente?");
+
+        if (r == true ) {
+            var id = $(this).val();
+            var base_url = $('#base').val();
+            
+            $.post(base_url + "ccustomers/delete",
+            {
+                id: id
+            },
+            function (data,status){
+                location.reload();
+            });
+        }
+        else {
+        }
+    });
+
+    $("#nit_add").change(function() {
+        $("#nit_duplicated").hide();
+        $("#btn-enviar").attr("disabled", false);
+        var nit = $(this).val();
         var base_url = $('#base').val();
-        
-        $.post(base_url + "ccustomers/delete",
-        {
-            id: id
-        },
-        function (data,status){
-            location.reload();
-        });
+
+        $.post(base_url + "ccustomers/check_nit", { nit: nit })
+            .done(function(data) {
+                var cv = JSON.parse(data);
+                if(cv.customer_nit == nit) {
+                    $("#nit_duplicated").show();
+                    $("#nit_duplicated").text("Este NIT ya existe");
+                    $("#btn-enviar").attr("disabled", true);
+                }
+            });
+    });
+
+    $("#nit_edit").change(function() {
+        $("#nit_duplicated").hide();
+        $("#btn-enviar").attr("disabled", false);
+        var cnit = $("#customer_nit").val();
+        var nit = $(this).val();
+        var base_url = $('#base').val();
+
+        if(cnit != nit) {
+            $.post(base_url + "ccustomers/check_nit", { nit: nit })
+            .done(function(data) {
+                var cv = JSON.parse(data);
+                if(cv.customer_nit == nit) {
+                    $("#nit_duplicated").show();
+                    $("#nit_duplicated").text("Este NIT ya existe");
+                    $("#btn-enviar").attr("disabled", true);
+                }
+            });
+        }
     });
 });

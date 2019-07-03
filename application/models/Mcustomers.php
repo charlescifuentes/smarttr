@@ -61,4 +61,11 @@ class Mcustomers extends CI_model{
         $this->db->where('customer_id',$id);
         return $this->db->update('customers',$data);
     }
+
+    public function check_nit($nit) {
+        $this->db->select("customer_nit");
+        $this->db->where('customer_nit',$nit);
+        $query = $this->db->get('customers');
+        return $query->row();
+    }
 }
