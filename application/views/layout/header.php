@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/fontastic.css">
     <!-- Google fonts - Poppins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <!-- jquery UI -->
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/jquery-ui/jquery-ui.css">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
@@ -104,3 +108,4 @@
           </div>
         </nav>
       </header>
+      <input type="hidden" id="base" value="<?php echo base_url(); ?>">

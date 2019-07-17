@@ -1,5 +1,6 @@
 /* your styles go here */
 
-#nit_duplicated {
+#nit_duplicated, #username_duplicated {
     display: none;
 }
+

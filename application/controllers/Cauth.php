@@ -34,6 +34,7 @@ class Cauth extends CI_Controller {
 				'id' => $res->user_id,
 				'nombres' => $res->user_firstname,
 				'apellidos' => $res->user_lastname,
+				'email' => $res->user_email,
 				'rol' => $res->rol_id,
 				'login' => TRUE 
 			);

@@ -23,6 +23,8 @@
     <script src="<?php echo base_url();?>assets/vendor/chart.js/Chart.min.js"></script>
     <script src="<?php echo base_url();?>assets/vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/charts-home.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="<?php echo base_url();?>assets/vendor/jquery-ui/jquery-ui.js"></script>
     <!-- Main File-->
     <script src="<?php echo base_url();?>assets/js/front.js"></script>
     <script src="<?php echo base_url();?>assets/js/custom.js"></script>

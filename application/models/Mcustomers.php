@@ -51,12 +51,9 @@ class Mcustomers extends CI_model{
         return $this->db->update('customers',$data);
     }
 
-    public function delete()
+    public function delete($id)
     {
-        $id = $this->input->post('id');
-        $data = array(
-            'customer_status' => 0
-        );
+        $data = array('customer_status' => 0);
         
         $this->db->where('customer_id',$id);
         return $this->db->update('customers',$data);

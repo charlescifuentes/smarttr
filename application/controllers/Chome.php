@@ -9,13 +9,16 @@ class Chome extends CI_Controller {
 		if (!$this->session->userdata("login")) {
 			redirect('cauth');
 		}
+		$this->load->model('mhome');
 	}
 
 	public function index()
-	{	
+	{
+		$data['techservices'] = $this->mhome->get_latest_ts();
+
 		$this->load->view('layout/header');
 		$this->load->view('layout/sidebar');
-		$this->load->view('home');
+		$this->load->view('home',$data);
 		$this->load->view('layout/footer');
 	}
 }
